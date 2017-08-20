@@ -3,6 +3,7 @@ var Ant = require('./build/ant');
 var HRS = require('./build/heart-rate-sensors');
 var SSD = require('./build/stride-speed-distance-sensors');
 var SC = require('./build/speed-cadence-sensors');
+var SS = require('./build/speed-sensor');
 var PS = require('./build/power-sensor');
 
 module.exports = {
@@ -15,5 +16,7 @@ module.exports = {
 	SpeedCadenceSensor: SC.SpeedCadenceSensor,
 	SpeedCadenceScanner: SC.SpeedCadenceScanner,
 	PowerSensor: PS.PowerSensor,
-    PowerScanner: PS.PowerScanner
+    PowerScanner: PS.PowerScanner,
+	SpeedSensor: SS.SpeedSensor,
+	SpeedScanner: SS.SpeedScanner
 };
