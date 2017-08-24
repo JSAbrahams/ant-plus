@@ -45,14 +45,14 @@ const updateState = function (sensor: SpeedSensor | SpeedScanner,
 			eventTime += 1024 * 64;
 		}
 		if (oldRevolutionCount > revolutionCount) {
-			revolutionCount += 65535;
+			revolutionCount += 1024 * 64;
 		}
 
 		const revolutions = revolutionCount - oldRevolutionCount;
 		const elapsedTime = eventTime - oldEventTime;
 
 		state.CalculatedSpeed = sensor.wheelCircumference * revolutions * 1024 / elapsedTime; // M/s
-		state.CalculatedSpeed = 60 * revolutions * 1024 / elapsedTime; // rpm
+		state.CalculatedCadence = 60 * revolutions * 1024 / elapsedTime; // rpm
 
 		if (elapsedTime > 5 * 1024) {
 			sensor.revolutions = 0;
